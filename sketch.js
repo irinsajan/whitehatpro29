@@ -6,6 +6,10 @@ var ground,stand,box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,box11,box12,
 function setup() {
     createCanvas(1200, 800);
     //1075,725,975,625
+    
+     engine = Engine.create();
+    world = engine.world;
+    
     ground = new Ground(600,780,1200,10);
     stand = new Ground(900,700,350,10);
     box1 = new Box(750,50,50);
@@ -30,6 +34,9 @@ function setup() {
   
 function draw() {
     background(220);
+    
+    Engine.update(engine);
+    
     ground.display();
     stand.display();
     box1.display();
